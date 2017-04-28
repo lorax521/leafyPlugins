@@ -1,0 +1,2 @@
+# leafyPlugins
+testing leaflet plugins
