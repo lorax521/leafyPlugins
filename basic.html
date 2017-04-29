@@ -60,6 +60,9 @@
 		});
 		map.addControl(routing);
 		routing.draw(true);
+		var polyline = routing.toPolyline();
+		var first = routing.getFirst([39.733636, -104.962920]);
+		var last = routing.getLast(marker);
 		
 	</script>
 	
