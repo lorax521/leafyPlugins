@@ -32,39 +32,11 @@
 			attribution: '&copy; <a href="http://www.openstreetmap.org/copyright">OpenStreetMap</a>'
 		}).addTo(map);
 
-		var routing = new L.Routing({
-		  position: 'topright'
-		  ,routing: {
-		    router: myRouterFunction
-		  }
-		  ,tooltips: {
-		    waypoint: 'Waypoint. Drag to move; Click to remove.',
-		    segment: 'Drag to create a new waypoint'
-		  }
-		  ,styles: {     // see http://leafletjs.com/reference.html#polyline-options
-		    trailer: {}  // drawing line
-		    ,track: {}   // calculated route result
-		    ,nodata: {}  // line when no result (error)
-		  }
-		  ,snapping: {
-		    layers: [mySnappingLayer]
-		    ,sensitivity: 15
-		    ,vertexonly: false
-		  }
-		  ,shortcut: {
-		    draw: {
-		      enable: 68    // 'd'
-		      ,disable: 81  // 'q'
-		    }
-		  }
-		});
-		map.addControl(routing);
-
 		var marker = L.marker([39.733635, -104.962921] pos, {
 		draggable: true
 	      }).addTo(map);
 	
-		<!-- var greenIcon = new L.Icon({
+		 var greenIcon = new L.Icon({
 		  iconUrl: 'https://cdn.rawgit.com/pointhi/leaflet-color-markers/master/img/marker-icon-2x-green.png',
 		  shadowUrl: 'https://cdnjs.cloudflare.com/ajax/libs/leaflet/0.7.7/images/marker-shadow.png',
 		  iconSize: [25, 41],
@@ -74,7 +46,7 @@
 		});
 
 		var mark = L.marker([39.733634, -104.962921], {icon: greenIcon}).addTo(map);
-		var marker = L.marker([39.733636, -104.962920]).addTo(map); -->
+		var marker = L.marker([39.733636, -104.962920]).addTo(map); 
 	</script>
 	
 </body>
