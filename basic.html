@@ -7,6 +7,9 @@
 	<link rel="stylesheet" href="https://unpkg.com/leaflet@1.0.3/dist/leaflet.css" />
 	<script src="https://unpkg.com/leaflet@1.0.3/dist/leaflet.js"></script>
 	<!--<script>leafet-providers.js</script>-->
+	<!--Mapzen-->
+	<link rel="stylesheet" href="https://unpkg.com/lrm-mapzen@1.1.7/dist/lrm-mapzen.css">
+	<link rel="stylesheet" href="https://mapzen.com/js/mapzen.css">
   
 	<style type="text/css">
 		html,body,#map { 
@@ -18,6 +21,9 @@
 	
 <body>
 	<div id="map"></div>
+	<script src="https://mapzen.com/js/mapzen.js"></script>
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/leaflet-routing-machine/3.2.5/leaflet-routing-machine.min.js"></script>
+	<script src="https://unpkg.com/lrm-mapzen@1.1.7/dist/lrm-mapzen.js"></script>
 	<script>
 		var map = L.map('map').setView([39.733635, -104.962921], 14);
 		var Stamen_TonerLite = L.tileLayer('http://stamen-tiles-{s}.a.ssl.fastly.net/toner-lite/{z}/{x}/{y}.{ext}', {
@@ -31,6 +37,21 @@
 		var marker = L.marker([39.733636, -104.962920], {
 		draggable: true
 	      }).addTo(map); 
+		
+		L.Routing.control({
+		  waypoints: [
+		    L.latLng(39.e734435, -104.964921),
+		    L.latLng(39.731635, -104.960921),
+		  ],
+		lineOptions: {
+		  styles: [ {color: "white",opacity: 0.8, weight: 12},
+			  {color: "#2676C6", opacity: 1, weight: 6}
+		]},	
+		  router: L.Routing.mapzen("mapzen-zjC7pba", {costing:"pedestrian"}),
+		  formatter: new L.Routing.mapzenFormatter(),
+		  summaryTemplate:'<div class="start">{name}</div><div class="info {costing}">{distance}, {time}</div>',
+		  routeWhileDragging: true
+		}).addTo(map);
 	</script>
 	
 </body>
