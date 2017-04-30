@@ -8,8 +8,8 @@
 	<script src="https://unpkg.com/leaflet@1.0.3/dist/leaflet.js"></script>
 	<!--<script>leafet-providers.js</script>-->
 	<!--Mapzen-->
-	<link rel="stylesheet" href="https://unpkg.com/lrm-mapzen@1.1.7/dist/lrm-mapzen.css">
-	<link rel="stylesheet" href="https://mapzen.com/js/mapzen.css">
+  <link rel="stylesheet" href="https://mapzen.com/js/mapzen.css">
+  <link rel="stylesheet" href="https://unpkg.com/lrm-mapzen@1.1.7/dist/lrm-mapzen.css">
   
 	<style type="text/css">
 		html,body,#map { 
@@ -51,7 +51,7 @@
 		
 		L.Routing.control({
 		  waypoints: [
-		    L.latLng(39.e734435, -104.964921),
+		    L.latLng(39.734435, -104.964921),
 		    L.latLng(39.731635, -104.960921),
 		  ],
 		lineOptions: {
@@ -63,6 +63,21 @@
 		  summaryTemplate:'<div class="start">{name}</div><div class="info {costing}">{distance}, {time}</div>',
 		  routeWhileDragging: true
 		}).addTo(map);
+		
+		 /*   L.Routing.control({
+		      waypoints: [
+			L.latLng(41.8758,-87.6189),
+			L.latLng(33.8128,-117.9259)
+		      ],
+		      lineOptions: {
+			styles: [ {color: "white",opacity: 0.8, weight: 12},
+				{color: "#2676C6", opacity: 1, weight: 6}
+		      ]},
+		      router: L.Routing.mapzen("your-mapzen-api-key", {costing:"auto"}), // paste your actual API key here
+		      formatter: new L.Routing.mapzenFormatter(),
+		      summaryTemplate:'<div class="start">{name}</div><div class="info {costing}">{distance}, {time}</div>',
+		      routeWhileDragging: false
+		    }).addTo(map); */
 		
 	/*waypoints.bindPopup("<b>Drag me!</b>").openPopup();*/
 	</script>
