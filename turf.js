@@ -1,5 +1,5 @@
 L.mapbox.accessToken = 'pk.eyJ1IjoibG9yYXg1MjEiLCJhIjoiY2owaW1uYXBiMDBlZDJxbzM4d2M1a3N6diJ9.jr45mw3pKka1dCwFfC4aOQ';
-
+/*
 L.geoJson(hospitals).addTo(map);
 L.geoJson(libraries).addTo(map);
 
@@ -14,12 +14,13 @@ for (var j = 0; j < libraries.features.length; j++) {
   libraries.features[j].properties['marker-symbol'] = 'library';
   libraries.features[j].properties['marker-size'] = 'small';
 }
-
+*/
 var map = L.mapbox.map('map', 'mapbox.light')
   .setView([38.05, -84.5], 12);
 map.scrollWheelZoom.disable();
-
+/*
 var hospitalLayer = L.mapbox.featureLayer(hospitals).addTo(map);
 var libraryLayer = L.mapbox.featureLayer(libraries).addTo(map);
 
 map.fitBounds(libraryLayer.getBounds());
+*/
