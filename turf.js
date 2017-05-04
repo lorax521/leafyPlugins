@@ -25,7 +25,7 @@ hospitalLayer.eachLayer(function(layer) {
 }).addTo(map);
 
 libraryLayer.eachLayer(function(layer) {
-  layer.bindPopup(layer.feature.properties.Name, {closeButton: false});
+  layer.bindPopup(layer.feature.properties.Name, {closeButton: true});
 }).addTo(map);
 
 //open popups on hover
