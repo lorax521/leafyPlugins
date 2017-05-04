@@ -21,7 +21,7 @@ map.fitBounds(libraryLayer.getBounds());
 
 //bind a popup to each feature 
 hospitalLayer.eachLayer(function(layer) {
-  layer.bindPopup('<strong>' + layer.feature.properties.Name + '<strong>', {closeButton: false});
+  layer.bindPopup('<strong>' + layer.feature.properties.Name + '<strong>', {closeButton: true});
 }).addTo(map);
 
 libraryLayer.eachLayer(function(layer) {
@@ -35,4 +35,19 @@ libraryLayer.on('mouseover', function(e) {
 
 hospitalLayer.on('mouseover', function(e) {
   e.layer.openPopup();
+});
+
+libraryLayer.on('click', function(e) {
+  //get the geojson from libraries and hospitals
+  var libraryFeatures = libraryLayer.getGeoJSON();
+  var hospitalFeatures = hospitalLayer.getGeoJSON();
+  
+  //find the nearest hospital to library clicked (turf.js)
+  var nearestHospital = turf.nearest(e.layer.feature, hospitalFeatures);
+  
+  // change the nearest hospital to a large marker
+  nearestHospital.properties['marker-size'] = 'large';
+  
+  //adds the new GeoJSON to hospitalLayer
+  hospitalLayer.setGeoJSON(hospitalFeatures);
 });
