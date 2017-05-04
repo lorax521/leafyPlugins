@@ -51,3 +51,7 @@ libraryLayer.on('click', function(e) {
   //adds the new GeoJSON to hospitalLayer
   hospitalLayer.setGeoJSON(hospitalFeatures);
 });
+
+map.on('click', function(e) {
+  reset();
+});
