@@ -1,3 +1,5 @@
+<script type='text/javascript'>
+
 L.mapbox.accessToken = 'pk.eyJ1IjoibG9yYXg1MjEiLCJhIjoiY2owaW1uYXBiMDBlZDJxbzM4d2M1a3N6diJ9.jr45mw3pKka1dCwFfC4aOQ';
 
 for (var i = 0; i < hospitals.features.length; i++) {
@@ -20,3 +22,5 @@ var hospitalLayer = L.mapbox.featureLayer(hospitals).addTo(map);
 var libraryLayer = L.mapbox.featureLayer(libraries).addTo(map);
 
 map.fitBounds(libraryLayer.getBounds());
+
+</script>
