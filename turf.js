@@ -1,4 +1,4 @@
-<script type='text/javascript'>
+<SCRIPT LANGUAGE="JavaScript">
 
 L.mapbox.accessToken = 'pk.eyJ1IjoibG9yYXg1MjEiLCJhIjoiY2owaW1uYXBiMDBlZDJxbzM4d2M1a3N6diJ9.jr45mw3pKka1dCwFfC4aOQ';
 
@@ -23,4 +23,4 @@ var libraryLayer = L.mapbox.featureLayer(libraries).addTo(map);
 
 map.fitBounds(libraryLayer.getBounds());
 
-</script>
+</SCRIPT>
