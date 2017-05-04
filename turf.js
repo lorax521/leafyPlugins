@@ -1,8 +1,7 @@
-<script type='text/javascript'>
-
 L.mapbox.accessToken = 'pk.eyJ1IjoibG9yYXg1MjEiLCJhIjoiY2owaW1uYXBiMDBlZDJxbzM4d2M1a3N6diJ9.jr45mw3pKka1dCwFfC4aOQ';
 
-<script src='turf.geojson'></script>
+L.geoJson(hospitals).addTo(map);
+L.geoJson(libraries).addTo(map);
 
 for (var i = 0; i < hospitals.features.length; i++) {
   hospitals.features[i].properties['marker-color'] = 'DC143C';
@@ -24,5 +23,3 @@ var hospitalLayer = L.mapbox.featureLayer(hospitals).addTo(map);
 var libraryLayer = L.mapbox.featureLayer(libraries).addTo(map);
 
 map.fitBounds(libraryLayer.getBounds());
-
-</script>
