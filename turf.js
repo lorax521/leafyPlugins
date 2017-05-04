@@ -33,6 +33,6 @@ libraryLayer.on('mouseover', function(e) {
   e.layer.openPopup();
 });
 
-hospitialLayer.on('mouseover', function(e) {
+hospitalLayer.on('mouseover', function(e) {
   e.layer.openPopup();
 });
