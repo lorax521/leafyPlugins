@@ -8,7 +8,7 @@ for (var i = 0; i < hospitals.features.length; i++) {
   hospitals.features[i].properties['marker-size'] = 'small';
 }
 
-for var j = 0; j < libraries.features.length; j++) {
+for (var j = 0; j < libraries.features.length; j++) {
   libraries.features[j].properties['marker-color'] = '#4169E1';
   libraries.features[j].properties['marker-symbol'] = 'library';
   libraries.features[j].properties['marker-size'] = 'small';
