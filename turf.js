@@ -15,9 +15,9 @@ for (var j = 0; j < libraries.features.length; j++) {
   libraries.features[j].properties['marker-size'] = 'small';
 }
 */
-var map = L.mapbox.map('map', 'mapbox.light')
-  .setView([38.05, -84.5], 12);
-map.scrollWheelZoom.enable();
+var map = L.mapbox.map('map', 'mapbox.light',
+  {scrollWheelZoom: true
+  }).setView([38.05, -84.5], 12);
 /*
 var hospitalLayer = L.mapbox.featureLayer(hospitals).addTo(map);
 var libraryLayer = L.mapbox.featureLayer(libraries).addTo(map);
