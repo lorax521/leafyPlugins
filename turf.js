@@ -21,11 +21,11 @@ map.fitBounds(libraryLayer.getBounds());
 
 //bind a popup to each feature 
 hospitalLayer.eachLayer(function(layer) {
-  layer.bindPopup('<strong>' + layer.feature.properties.Name + '<strong>', {closeButton: true});
+  layer.bindPopup('<strong>' + layer.feature.properties.Name + '<strong>', {closeButton: false});
 }).addTo(map);
 
 libraryLayer.eachLayer(function(layer) {
-  layer.bindPopup(layer.feature.properties.Name, {closeButton: true});
+  layer.bindPopup(layer.feature.properties.Name, {closeButton: false});
 }).addTo(map);
 
 //open popups on hover
