@@ -4,7 +4,7 @@ L.mapbox.accessToken = 'pk.eyJ1IjoibG9yYXg1MjEiLCJhIjoiY2owaW1uYXBiMDBlZDJxbzM4d
 
 for (var i = 0; i < hospitals.features.length; i++) {
   hospitals.features[i].properties['marker-color'] = 'DC143C';
-  hospitals.features[i].properties[marker-symbol'] = 'hospital';
+  hospitals.features[i].properties['marker-symbol'] = 'hospital';
   hospitals.features[i].properties['marker-size'] = 'small';
 }
 
