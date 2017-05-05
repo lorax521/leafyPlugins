@@ -54,6 +54,7 @@ hospitalLayer.on('mouseout', function(e) {
 });
 
 libraryLayer.on('click', function(e) {
+  for (i = 0; i < 2; i++) {
   //get the geojson from libraries and hospitals
   var libraryFeatures = libraryLayer.getGeoJSON();
   var hospitalFeatures = hospitalLayer.getGeoJSON();
@@ -73,6 +74,6 @@ libraryLayer.on('click', function(e) {
     hospitalLayer.eachLayer(function(layer) {
     layer.bindPopup('<strong>' + layer.feature.properties.Name + '<strong>', {closeButton: false});
     }).addTo(map);
-  }, 200);
-});
+  }, 150);
+})};
 
