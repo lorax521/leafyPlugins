@@ -28,13 +28,19 @@ libraryLayer.eachLayer(function(layer) {
   layer.bindPopup(layer.feature.properties.Name, {closeButton: false});
 }).addTo(map);
 
-//open popups on hover
+//manages popups on hover
 libraryLayer.on('mouseover', function(e) {
   e.layer.openPopup();
+});
+libraryLayer.on('mouseout', function(e) {
+  e.layer.closePopup();
 });
 
 hospitalLayer.on('mouseover', function(e) {
   e.layer.openPopup();
+});
+hospitalLayer.on('mouseout', function(e) {
+  e.layer.closePopup();
 });
 
 libraryLayer.on('click', function(e) {
