@@ -69,7 +69,10 @@ libraryLayer.on('click', function(e) {
   
   setTimeout(function(){ 
     nearestHospital.properties['marker-size'] = 'small'; 
-    hospitalLayer.setGeoJSON(hospitalFeatures);    
-  }, 1000);
+    hospitalLayer.setGeoJSON(hospitalFeatures);
+    hospitalLayer.eachLayer(function(layer) {
+    layer.bindPopup('<strong>' + layer.feature.properties.Name + '<strong>', {closeButton: false});
+    }).addTo(map);
+  }, 200);
 });
 
