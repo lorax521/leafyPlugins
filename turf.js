@@ -54,7 +54,7 @@ hospitalLayer.on('mouseout', function(e) {
 });
 
 libraryLayer.on('click', function(e) {
-  for (i = 0; i < 2; i++) {
+  for (i = 0; i < 3; i++) {
   //get the geojson from libraries and hospitals
   var libraryFeatures = libraryLayer.getGeoJSON();
   var hospitalFeatures = hospitalLayer.getGeoJSON();
