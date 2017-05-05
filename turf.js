@@ -76,6 +76,6 @@ libraryLayer.on('click', function(e) {
       layer.bindPopup('<strong>' + layer.feature.properties.Name + '<strong>', {closeButton: false});
       }).addTo(map);
     }, 150);
-  }),100);}
+  }}), 150);
 });
 
