@@ -43,23 +43,20 @@ hospitalLayer.on('mouseout', function(e) {
   e.layer.closePopup();
 });
 
-setTimeout(function () {
-  libraryLayer.on('click', function(e) {
-    //get the geojson from libraries and hospitals
-    var libraryFeatures = libraryLayer.getGeoJSON();
-    var hospitalFeatures = hospitalLayer.getGeoJSON();
+libraryLayer.on('click', function(e) {
+  //get the geojson from libraries and hospitals
+  var libraryFeatures = libraryLayer.getGeoJSON();
+  var hospitalFeatures = hospitalLayer.getGeoJSON();
 
-    //find the nearest hospital to library clicked (turf.js)
-    var nearestHospital = turf.nearest(e.layer.feature, hospitalFeatures);
+  //find the nearest hospital to library clicked (turf.js)
+  var nearestHospital = turf.nearest(e.layer.feature, hospitalFeatures);
 
-    // change the nearest hospital to a large marker
-    nearestHospital.properties['marker-size'] = 'large';
+  // change the nearest hospital to a large marker
+  nearestHospital.properties['marker-size'] = 'large';
 
-    //adds the new GeoJSON to hospitalLayer
-    hospitalLayer.setGeoJSON(hospitalFeatures);
+  //adds the new GeoJSON to hospitalLayer
+  hospitalLayer.setGeoJSON(hospitalFeatures);
+  
+  setTimeout(function(){ nearestHospital.properties['marker-size'] = 'small'; }, 2000);
+});
 
-    setTimeout(function(){
-        document.getElementById("contact-form").reset();
-    }, 3000);
-  });
-}, 3000);
