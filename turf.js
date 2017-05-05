@@ -20,8 +20,16 @@ var libraryLayer = L.mapbox.featureLayer(libraries).addTo(map);
 map.fitBounds(libraryLayer.getBounds());
 
 //bind a popup to each feature 
-hospitalLayer.eachLayer(function(layer) {
+/*hospitalLayer.eachLayer(function(layer) {
   layer.bindPopup('<strong>' + layer.feature.properties.Name + '<strong>', {closeButton: false});
+}).addTo(map);*/
+
+  hospitalLayer.eachLayer(function(layer) {
+    layer.bindPopup('<strong>' + layer.feature.properties.Name + '</strong>', { closeButton: false });
+    if (layer.feature.properties['marker-size'] === 'large') {
+      layer.openPopup();
+    }
+  });
 }).addTo(map);
 
 libraryLayer.eachLayer(function(layer) {
