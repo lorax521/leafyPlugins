@@ -52,6 +52,6 @@ libraryLayer.on('click', function(e) {
   hospitalLayer.setGeoJSON(hospitalFeatures);
 });
 
-map.on('click', function(e) {
-  reset();
-});
+  map.on('click', function(e) {
+    reset();
+  });
