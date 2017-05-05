@@ -54,26 +54,27 @@ hospitalLayer.on('mouseout', function(e) {
 });
 
 libraryLayer.on('click', function(e) {
-  for (i = 0; i <= 3; i++) {
   //get the geojson from libraries and hospitals
   var libraryFeatures = libraryLayer.getGeoJSON();
   var hospitalFeatures = hospitalLayer.getGeoJSON();
 
   //find the nearest hospital to library clicked (turf.js)
-  var nearestHospital = turf.nearest(e.layer.feature, hospitalFeatures);
+  var nearestHospital = turf.nearest(e.layer.feature, hospitalFeatures);  
 
-  // change the nearest hospital to a large marker
-  nearestHospital.properties['marker-size'] = 'large';
+  for (i = 0; i < 2; i++) {
+    // change the nearest hospital to a large marker
+    nearestHospital.properties['marker-size'] = 'large';
 
-  //adds the new GeoJSON to hospitalLayer
-  hospitalLayer.setGeoJSON(hospitalFeatures);
-  
-  setTimeout(function(){ 
-    nearestHospital.properties['marker-size'] = 'small'; 
+    //adds the new GeoJSON to hospitalLayer
     hospitalLayer.setGeoJSON(hospitalFeatures);
-    hospitalLayer.eachLayer(function(layer) {
-    layer.bindPopup('<strong>' + layer.feature.properties.Name + '<strong>', {closeButton: false});
-    }).addTo(map);
-  }, 150);
-  }});
+
+    setTimeout(function(){ 
+      nearestHospital.properties['marker-size'] = 'small'; 
+      hospitalLayer.setGeoJSON(hospitalFeatures);
+      hospitalLayer.eachLayer(function(layer) {
+      layer.bindPopup('<strong>' + layer.feature.properties.Name + '<strong>', {closeButton: false});
+      }).addTo(map);
+    }, 150);
+  };
+});
 
