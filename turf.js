@@ -60,7 +60,8 @@ libraryLayer.on('click', function(e) {
 
   //find the nearest hospital to library clicked (turf.js)
   var nearestHospital = turf.nearest(e.layer.feature, hospitalFeatures);  
-
+  
+  setTimeout(function(){ 
   for (i = 0; i < 3; i++) {
     // change the nearest hospital to a large marker
     nearestHospital.properties['marker-size'] = 'large';
@@ -75,6 +76,6 @@ libraryLayer.on('click', function(e) {
       layer.bindPopup('<strong>' + layer.feature.properties.Name + '<strong>', {closeButton: false});
       }).addTo(map);
     }, 150);
-  }
+  }),100);}
 });
 
