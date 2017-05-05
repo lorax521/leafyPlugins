@@ -56,6 +56,10 @@ libraryLayer.on('click', function(e) {
   
   //adds the new GeoJSON to hospitalLayer
   hospitalLayer.setGeoJSON(hospitalFeatures);
+  
+  setTimeout(function(){
+      document.getElementById("contact-form").reset();
+  }, 3000);
 });
 
   map.on('click', function(e) {
