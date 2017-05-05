@@ -20,10 +20,11 @@ var libraryLayer = L.mapbox.featureLayer(libraries).addTo(map);
 map.fitBounds(libraryLayer.getBounds());
 
 //bind a popup to each feature 
-/*hospitalLayer.eachLayer(function(layer) {
+hospitalLayer.eachLayer(function(layer) {
   layer.bindPopup('<strong>' + layer.feature.properties.Name + '<strong>', {closeButton: false});
-}).addTo(map);*/
+}).addTo(map);
 
+/*
   hospitalLayer.eachLayer(function(layer) {
     layer.bindPopup('<strong>' + layer.feature.properties.Name + '</strong>', { closeButton: false });
     if (layer.feature.properties['marker-size'] === 'large') {
@@ -31,6 +32,7 @@ map.fitBounds(libraryLayer.getBounds());
     }
   });
 }).addTo(map);
+*/
 
 libraryLayer.eachLayer(function(layer) {
   layer.bindPopup(layer.feature.properties.Name, {closeButton: false});
@@ -65,6 +67,9 @@ libraryLayer.on('click', function(e) {
   //adds the new GeoJSON to hospitalLayer
   hospitalLayer.setGeoJSON(hospitalFeatures);
   
-  setTimeout(function(){ nearestHospital.properties['marker-size'] = 'small'; }, 2000);
+  setTimeout(function(){ 
+    nearestHospital.properties['marker-size'] = 'small'; 
+    hospitalLayer.setGeoJSON(hospitalFeatures);    
+  }, 1000);
 });
 
