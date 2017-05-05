@@ -82,11 +82,10 @@ libraryLayer.on('click', function(e) {
 //Routing
 L.Mapzen.apiKey = "mapzen-zjC7pba";
 
-/*
 L.Routing.control({
   waypoints: [
-    L.latLng(39.734435, -104.964921),
-    L.latLng(39.731635, -104.960921),
+    L.latLng(38.055, -84.53),
+    L.latLng(38.054, -84.56),
   ],
 lineOptions: {
   styles: [ {color: "white",opacity: 0.8, weight: 12},
@@ -97,4 +96,4 @@ lineOptions: {
   summaryTemplate:'<div class="start">{name}</div><div class="info {costing}">{distance}, {time}</div>',
   routeWhileDragging: true
 }).addTo(map);
-*/
+
