@@ -27,7 +27,7 @@ L.Mapzen.apiKey = "mapzen-zjC7pba";
 		
 		L.Routing.control({
 		  waypoints: [
-		    L.latLng(38.0504, -84.502),
+		    L.latLng(38.0534, -84.572),
 		    L.latLng(38.0506, -84.507),
 		  ],
 		lineOptions: {
