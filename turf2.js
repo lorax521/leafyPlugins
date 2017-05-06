@@ -1,3 +1,4 @@
+/*
 L.mapbox.accessToken = 'pk.eyJ1IjoibG9yYXg1MjEiLCJhIjoiY2owaW1uYXBiMDBlZDJxbzM4d2M1a3N6diJ9.jr45mw3pKka1dCwFfC4aOQ';
 
 for (var i = 0; i < hospitals.features.length; i++) {
@@ -13,6 +14,7 @@ for (var j = 0; j < libraries.features.length; j++) {
 }
 
 //var map = L.mapbox.map('map', 'mapbox.light').setView([38.05, -84.5], 12);
+*/
 
 var map = L.map('map').setView([38.05, -84.5], 12);
 
@@ -20,7 +22,7 @@ var OpenStreetMap_BlackAndWhite = L.tileLayer('http://{s}.tiles.wmflabs.org/bw-m
 	maxZoom: 18,
 	attribution: '&copy; <a href="http://www.openstreetmap.org/copyright">OpenStreetMap</a>'
 }).addTo(map);
-
+/*
 var hospitalLayer = L.mapbox.featureLayer(hospitals).addTo(map);
 var libraryLayer = L.mapbox.featureLayer(libraries).addTo(map);
 
@@ -32,14 +34,6 @@ hospitalLayer.eachLayer(function(layer) {
 }).addTo(map);
 
 /*
-  hospitalLayer.eachLayer(function(layer) {
-    layer.bindPopup('<strong>' + layer.feature.properties.Name + '</strong>', { closeButton: false });
-    if (layer.feature.properties['marker-size'] === 'large') {
-      layer.openPopup();
-    }
-  });
-}).addTo(map);
-*/
 
 libraryLayer.eachLayer(function(layer) {
   layer.bindPopup(layer.feature.properties.Name, {closeButton: false});
@@ -83,6 +77,7 @@ libraryLayer.on('click', function(e) {
       }).addTo(map);
     }, 150);
 });
+*/
 
 //Routing
 L.Mapzen.apiKey = "mapzen-zjC7pba";
