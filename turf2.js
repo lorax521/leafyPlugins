@@ -8,6 +8,8 @@ var OpenStreetMap_BlackAndWhite = L.tileLayer('http://{s}.tiles.wmflabs.org/bw-m
 	attribution: '&copy; <a href="http://www.openstreetmap.org/copyright">OpenStreetMap</a>'
 }).addTo(map);
 
+var marker = L.marker([38.05, -84.5]).addTo(map);
+
 L.Routing.control({
   waypoints: [
     L.latLng(38.052, -84.54),
