@@ -12,8 +12,6 @@ for (var j = 0; j < libraries.features.length; j++) {
   libraries.features[j].properties['marker-size'] = 'small';
 }
 
-//var map = L.mapbox.map('map', 'mapbox.light').setView([38.05, -84.5], 12);
-
 var map = L.map('map').setView([38.05, -84.5], 12);
 
 var OpenStreetMap_BlackAndWhite = L.tileLayer('http://{s}.tiles.wmflabs.org/bw-mapnik/{z}/{x}/{y}.png', {
@@ -30,16 +28,6 @@ map.fitBounds(libraryLayer.getBounds());
 hospitalLayer.eachLayer(function(layer) {
   layer.bindPopup('<strong>' + layer.feature.properties.Name + '<strong>', {closeButton: false});
 }).addTo(map);
-
-/*
-  hospitalLayer.eachLayer(function(layer) {
-    layer.bindPopup('<strong>' + layer.feature.properties.Name + '</strong>', { closeButton: false });
-    if (layer.feature.properties['marker-size'] === 'large') {
-      layer.openPopup();
-    }
-  });
-}).addTo(map);
-*/
 
 libraryLayer.eachLayer(function(layer) {
   layer.bindPopup(layer.feature.properties.Name, {closeButton: false});
@@ -83,22 +71,4 @@ libraryLayer.on('click', function(e) {
       }).addTo(map);
     }, 150);
 });
-
-//Routing
-L.Mapzen.apiKey = "mapzen-zjC7pba";
-
-L.Routing.control({
-  waypoints: [
-    L.latLng(38.0505, -84.503),
-    L.latLng(38.0504, -84.506),
-  ],
-lineOptions: {
-  styles: [ {color: "white",opacity: 0.8, weight: 12},
-    {color: "#2676C6", opacity: 1, weight: 6}
-]},	
-  router: L.Routing.mapzen("mapzen-zjC7pba", {costing:"auto"}),
-  formatter: new L.Routing.mapzenFormatter(),
-  summaryTemplate:'<div class="start">{name}</div><div class="info {costing}">{distance}, {time}</div>',
-  routeWhileDragging: true
-}).addTo(map);
 
