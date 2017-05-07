@@ -1,8 +1,6 @@
 //mapzen
 L.Mapzen.apiKey = "mapzen-zjC7pba";
 
-// alt key //L.mapbox.accessToken = 'pk.eyJ1IjoibG9yYXg1MjEiLCJhIjoiY2oyZTlneWxzMDdsbzJxbHZ1NHVkY284ciJ9.M99KYDewtwHYmtdJO-j4Eg';
-
 var map = L.map('map').setView([38.05, -84.5], 12);
 
 var OpenStreetMap_BlackAndWhite = L.tileLayer('http://{s}.tiles.wmflabs.org/bw-mapnik/{z}/{x}/{y}.png', {
@@ -30,7 +28,8 @@ iconOptions: {
 }).addTo(map);
 
 //turf
-L.mapbox.accessToken = 'pk.eyJ1IjoibG9yYXg1MjEiLCJhIjoiY2owaW1uYXBiMDBlZDJxbzM4d2M1a3N6diJ9.jr45mw3pKka1dCwFfC4aOQ';
+//alt key//L.mapbox.accessToken = 'pk.eyJ1IjoibG9yYXg1MjEiLCJhIjoiY2owaW1uYXBiMDBlZDJxbzM4d2M1a3N6diJ9.jr45mw3pKka1dCwFfC4aOQ';
+L.mapbox.accessToken = 'pk.eyJ1IjoibG9yYXg1MjEiLCJhIjoiY2oyZTlneWxzMDdsbzJxbHZ1NHVkY284ciJ9.M99KYDewtwHYmtdJO-j4Eg';
 
 for (var i = 0; i < hospitals.features.length; i++) {
   hospitals.features[i].properties['marker-color'] = 'DC143C';
@@ -43,13 +42,6 @@ for (var j = 0; j < libraries.features.length; j++) {
   libraries.features[j].properties['marker-symbol'] = 'library';
   libraries.features[j].properties['marker-size'] = 'small';
 }
-
-var map = L.map('map').setView([38.05, -84.5], 12);
-
-var OpenStreetMap_BlackAndWhite = L.tileLayer('http://{s}.tiles.wmflabs.org/bw-mapnik/{z}/{x}/{y}.png', {
-	maxZoom: 18,
-	attribution: '&copy; <a href="http://www.openstreetmap.org/copyright">OpenStreetMap</a>'
-}).addTo(map);
 
 var hospitalLayer = L.mapbox.featureLayer(hospitals).addTo(map);
 var libraryLayer = L.mapbox.featureLayer(libraries).addTo(map);
