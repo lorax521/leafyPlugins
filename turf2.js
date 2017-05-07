@@ -20,7 +20,7 @@ iconOptions: {
   styles: [ {color: "green"},
 	  {color: "pink"}
 ]},	
-  router: L.Routing.mapzen("mapzen-zjC7pba", {costing:"pedestrian"}),
+  router: L.Routing.mapzen("mapzen-zjC7pba", {costing:"auto"}),
   formatter: new L.Routing.mapzenFormatter(),
   summaryTemplate:'<div class="start">{name}</div><div class="info {costing}">{distance}, {time}</div>',
   routeWhileDragging: true
