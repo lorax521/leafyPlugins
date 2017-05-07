@@ -54,6 +54,15 @@ var libraryLayer = L.mapbox.featureLayer(libraries).addTo(map);
 var hospitalLayer = L.geoJSON(hospitals).addTo(map);
 var libraryLayer = L.geoJSON(libraries).addTo(map);
 
+var hospitalLayer = L.mapbox.featureLayer()
+	.loadURL('turfHospitals.js')
+	.addTo(map);
+
+
+var libraryLayer = L.mapbox.featureLayer()
+	.loadURL('turfLibraries.js')
+	.addTo(map);
+
 map.fitBounds(libraryLayer.getBounds());
 
 //bind a popup to each feature 
