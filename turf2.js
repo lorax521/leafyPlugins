@@ -1,5 +1,6 @@
 L.Mapzen.apiKey = "mapzen-zjC7pba";
-//L.mapbox.accessToken = 'pk.eyJ1IjoibG9yYXg1MjEiLCJhIjoiY2owaW1uYXBiMDBlZDJxbzM4d2M1a3N6diJ9.jr45mw3pKka1dCwFfC4aOQ';
+
+L.mapbox.accessToken = 'pk.eyJ1IjoibG9yYXg1MjEiLCJhIjoiY2owaW1uYXBiMDBlZDJxbzM4d2M1a3N6diJ9.jr45mw3pKka1dCwFfC4aOQ';
 
 for (var i = 0; i < hospitals.features.length; i++) {
   hospitals.features[i].properties['marker-color'] = 'DC143C';
