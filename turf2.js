@@ -1,16 +1,17 @@
 L.Mapzen.apiKey = "mapzen-zjC7pba";
-L.mapbox.accessToken = 'pk.eyJ1IjoibG9yYXg1MjEiLCJhIjoiY2owaW1uYXBiMDBlZDJxbzM4d2M1a3N6diJ9.jr45mw3pKka1dCwFfC4aOQ';
 
-L.mapbox.accessToken = 'pk.eyJ1IjoibG9yYXg1MjEiLCJhIjoiY2owaW1uYXBiMDBlZDJxbzM4d2M1a3N6diJ9.jr45mw3pKka1dCwFfC4aOQ';
-var map = L.mapbox.map('map', 'mapbox.light')
-  .setView([38.05, -84.5], 12);
-map.scrollWheelZoom.disable();
-		
-		
+var map = L.map('map').setView([39.733635, -104.962921], 13);
+
+var HikeBike_HikeBike = L.tileLayer('http://{s}.tiles.wmflabs.org/hikebike/{z}/{x}/{y}.png', {
+	maxZoom: 20,
+	minZoom: 5,
+	attribution: '&copy; <a href="http://www.openstreetmap.org/copyright">OpenStreetMap</a>'
+}).addTo(map);
+
 L.Routing.control({
   waypoints: [
-    L.latLng(38.0534, -84.572),
-    L.latLng(38.0506, -84.507),
+    L.latLng(39.734435, -104.964921),
+    L.latLng(39.731635, -104.960921),
   ],
 lineOptions: {
   styles: [ {color: "white",opacity: 0.8, weight: 12},
@@ -20,7 +21,7 @@ iconOptions: {
   styles: [ {color: "green"},
 	  {color: "pink"}
 ]},	
-  router: L.Routing.mapzen("mapzen-zjC7pba", {costing:"auto"}),
+  router: L.Routing.mapzen("mapzen-zjC7pba", {costing:"pedestrian"}),
   formatter: new L.Routing.mapzenFormatter(),
   summaryTemplate:'<div class="start">{name}</div><div class="info {costing}">{distance}, {time}</div>',
   routeWhileDragging: true
