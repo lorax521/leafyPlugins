@@ -8,7 +8,7 @@ var OpenStreetMap_BlackAndWhite = L.tileLayer('http://{s}.tiles.wmflabs.org/bw-m
 	attribution: '&copy; <a href="http://www.openstreetmap.org/copyright">OpenStreetMap</a>'
 }).addTo(map);
 
-var marker = L.marker([38.05, -84.5], 
+var marker = L.marker([38.05, -84.44], 
 		      {draggable: 'true'}).addTo(map);
 
 L.Routing.control({
@@ -55,12 +55,12 @@ var hospitalLayer = L.geoJSON(hospitals).addTo(map);
 var libraryLayer = L.geoJSON(libraries).addTo(map);
 
 var hospitalLayer = L.mapbox.featureLayer()
-	.loadURL('turfHospitals.js')
+	.loadURL('turfHospitals.geojson')
 	.addTo(map);
 
 
 var libraryLayer = L.mapbox.featureLayer()
-	.loadURL('turfLibraries.js')
+	.loadURL('turfLibraries.geojson')
 	.addTo(map);
 
 map.fitBounds(libraryLayer.getBounds());
