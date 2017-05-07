@@ -46,11 +46,13 @@ for (var j = 0; j < libraries.features.length; j++) {
   libraries.features[j].properties['marker-size'] = 'small';
 }
 
+/*
 var hospitalLayer = L.mapbox.featureLayer(hospitals).addTo(map);
 var libraryLayer = L.mapbox.featureLayer(libraries).addTo(map);
+*/
 
-L.geoJSON(hospitals).addTo(map);
-L.geoJSON(libraries).addTo(map);
+var hospitalLayer = L.geoJSON(hospitals).addTo(map);
+var libraryLayer = L.geoJSON(libraries).addTo(map);
 
 map.fitBounds(libraryLayer.getBounds());
 
