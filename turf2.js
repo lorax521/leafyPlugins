@@ -1,17 +1,16 @@
 L.Mapzen.apiKey = "mapzen-zjC7pba";
 
-var map = L.map('map').setView([39.733635, -104.962921], 13);
+var map = L.map('map').setView([38.05, -84.5], 12);
 
-var HikeBike_HikeBike = L.tileLayer('http://{s}.tiles.wmflabs.org/hikebike/{z}/{x}/{y}.png', {
-	maxZoom: 20,
-	minZoom: 5,
+var OpenStreetMap_BlackAndWhite = L.tileLayer('http://{s}.tiles.wmflabs.org/bw-mapnik/{z}/{x}/{y}.png', {
+	maxZoom: 18,
 	attribution: '&copy; <a href="http://www.openstreetmap.org/copyright">OpenStreetMap</a>'
 }).addTo(map);
 
 L.Routing.control({
   waypoints: [
-    L.latLng(39.734435, -104.964921),
-    L.latLng(39.731635, -104.960921),
+    L.latLng(38.052, -84.54),
+    L.latLng(38.053, -84.57),
   ],
 lineOptions: {
   styles: [ {color: "white",opacity: 0.8, weight: 12},
