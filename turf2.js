@@ -74,4 +74,7 @@ var libraries = {
     var libraryLayer = L.mapbox.featureLayer(libraries)
       .addTo(map);
 
+	L.geoJSON(hospitals).addTo(map);
+	L.geoJSON(libraries).addTo(map);
+
     map.fitBounds(libraryLayer.getBounds());
