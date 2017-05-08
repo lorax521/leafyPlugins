@@ -12,12 +12,7 @@ for (var j = 0; j < libraries.features.length; j++) {
   libraries.features[j].properties['marker-size'] = 'small';
 }
 
-var map = L.map('map').setView([38.05, -84.5], 12);
-
-var OpenStreetMap_BlackAndWhite = L.tileLayer('http://{s}.tiles.wmflabs.org/bw-mapnik/{z}/{x}/{y}.png', {
-	maxZoom: 18,
-	attribution: '&copy; <a href="http://www.openstreetmap.org/copyright">OpenStreetMap</a>'
-}).addTo(map);
+var map = L.mapbox.map('map', 'mapbox.light').setView([38.05, -84.5], 12);
 
 var hospitalLayer = L.mapbox.featureLayer(hospitals).addTo(map);
 var libraryLayer = L.mapbox.featureLayer(libraries).addTo(map);
@@ -33,20 +28,42 @@ libraryLayer.eachLayer(function(layer) {
   layer.bindPopup(layer.feature.properties.Name, {closeButton: false});
 }).addTo(map);
 
-//manages popups on hover
+//open popups on hover
 libraryLayer.on('mouseover', function(e) {
   e.layer.openPopup();
-});
-libraryLayer.on('mouseout', function(e) {
-  e.layer.closePopup();
 });
 
 hospitalLayer.on('mouseover', function(e) {
   e.layer.openPopup();
 });
-hospitalLayer.on('mouseout', function(e) {
-  e.layer.closePopup();
+
+libraryLayer.on('click', function(e) {
+  //get the geojson from libraries and hospitals
+  var libraryFeatures = libraryLayer.getGeoJSON();
+  var hospitalFeatures = hospitalLayer.getGeoJSON();
+  
+  //find the nearest hospital to library clicked (turf.js)
+  var nearestHospital = turf.nearest(e.layer.feature, hospitalFeatures);
+  
+  // change the nearest hospital to a large marker
+  nearestHospital.properties['marker-size'] = 'large';
+  
+  //adds the new GeoJSON to hospitalLayer
+  hospitalLayer.setGeoJSON(hospitalFeatures);
 });
+
+map.on('click', function(e) {
+  reset();
+});
+
+/*
+var map = L.map('map').setView([38.05, -84.5], 12);
+
+var OpenStreetMap_BlackAndWhite = L.tileLayer('http://{s}.tiles.wmflabs.org/bw-mapnik/{z}/{x}/{y}.png', {
+	maxZoom: 18,
+	attribution: '&copy; <a href="http://www.openstreetmap.org/copyright">OpenStreetMap</a>'
+}).addTo(map);
+
 
 libraryLayer.on('click', function(e) {
   //get the geojson from libraries and hospitals
@@ -71,4 +88,4 @@ libraryLayer.on('click', function(e) {
       }).addTo(map);
     }, 150);
 });
-
+*/
