@@ -84,6 +84,9 @@
     // hospital markers to small
     map.on('click', function(e) {
       reset();
+	hospitalLayer.eachLayer(function(layer) {
+      		layer.bindPopup('<strong>' + layer.feature.properties.Name + '</strong>', { closeButton: false });
+    	}).addTo(map);
     });
 /*
 L.mapbox.accessToken = 'pk.eyJ1IjoibG9yYXg1MjEiLCJhIjoiY2owaW1uYXBiMDBlZDJxbzM4d2M1a3N6diJ9.jr45mw3pKka1dCwFfC4aOQ';
