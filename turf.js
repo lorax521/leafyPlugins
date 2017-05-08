@@ -144,6 +144,13 @@ libraryLayer.on('click', function(e) {
       e.layer.openPopup();
     });
 
+	libraryLayer.on('mouseout', function(e) {
+	  e.layer.closePopup();
+	});
+	hospitalLayer.on('mouseout', function(e) {
+	  e.layer.closePopup();
+	});
+
     // Reset marker size to small
     function reset() {
       var hospitalFeatures = hospitalLayer.getGeoJSON();
