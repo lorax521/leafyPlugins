@@ -27,14 +27,14 @@ var OpenStreetMap_BlackAndWhite = L.tileLayer('http://{s}.tiles.wmflabs.org/bw-m
 
     var map = L.mapbox.map('map', 'mapbox.light')
       .setView([38.05, -84.5], 12);
-    map.scrollWheelZoom.disable();
+    map.scrollWheelZoom.enable();
 
     var hospitalLayer = L.mapbox.featureLayer(hospitals)
       .addTo(map);
     var libraryLayer = L.mapbox.featureLayer(libraries)
       .addTo(map);
 
-    map.fitBounds(libraryLayer.getBounds());
+    map.fitBounds(libraryLayer.getBounds());e
 
     // Bind a popup to each feature in hospitalLayer and libraryLayer
     hospitalLayer.eachLayer(function(layer) {
@@ -105,7 +105,7 @@ var marker = L.marker([38.05, -84.53],
 		      {draggable: 'true'}).addTo(map);
 */
 
-/*
+
 //mapzen
 L.Mapzen.apiKey = "mapzen-zjC7pba";
 
@@ -123,4 +123,4 @@ lineOptions: {
   summaryTemplate:'<div class="start">{name}</div><div class="info {costing}">{distance}, {time}</div>',
   routeWhileDragging: true
 }).addTo(map);
-*/
+
