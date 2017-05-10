@@ -1,6 +1,3 @@
-//mapzen
-L.Mapzen.apiKey = "mapzen-zjC7pba";
-
 var map = L.map('map').setView([38.05, -84.5], 12);
 
 var OpenStreetMap_BlackAndWhite = L.tileLayer('http://{s}.tiles.wmflabs.org/bw-mapnik/{z}/{x}/{y}.png', {
@@ -10,21 +7,6 @@ var OpenStreetMap_BlackAndWhite = L.tileLayer('http://{s}.tiles.wmflabs.org/bw-m
 
 var marker = L.marker([38.05, -84.53], 
 		      {draggable: 'true'}).addTo(map);
-
-L.Routing.control({
-  waypoints: [
-    L.latLng(38.052, -84.54),
-    L.latLng(38.053, -84.51),
-  ],
-lineOptions: {
-  styles: [ {color: "white",opacity: 0.8, weight: 12},
-	  {color: "#2676C6", opacity: 1, weight: 6}
-]},	
-  router: L.Routing.mapzen("mapzen-zjC7pba", {costing:"auto"}),
-  formatter: new L.Routing.mapzenFormatter(),
-  summaryTemplate:'<div class="start">{name}</div><div class="info {costing}">{distance}, {time}</div>',
-  routeWhileDragging: true
-}).addTo(map);
 
 //turf
 //alt key//L.mapbox.accessToken = 'pk.eyJ1IjoibG9yYXg1MjEiLCJhIjoiY2owaW1uYXBiMDBlZDJxbzM4d2M1a3N6diJ9.jr45mw3pKka1dCwFfC4aOQ';
@@ -112,3 +94,22 @@ geojsonLayer.addTo(map);
 */
 
     map.fitBounds(libraryLayer.getBounds());
+
+
+//mapzen
+L.Mapzen.apiKey = "mapzen-zjC7pba";
+
+L.Routing.control({
+  waypoints: [
+    L.latLng(38.052, -84.54),
+    L.latLng(38.053, -84.51),
+  ],
+lineOptions: {
+  styles: [ {color: "white",opacity: 0.8, weight: 12},
+	  {color: "#2676C6", opacity: 1, weight: 6}
+]},	
+  router: L.Routing.mapzen("mapzen-zjC7pba", {costing:"auto"}),
+  formatter: new L.Routing.mapzenFormatter(),
+  summaryTemplate:'<div class="start">{name}</div><div class="info {costing}">{distance}, {time}</div>',
+  routeWhileDragging: true
+}).addTo(map);
