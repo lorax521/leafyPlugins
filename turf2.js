@@ -1,4 +1,4 @@
-L.mapbox.accessToken = 'pk.eyJ1IjoibG9yYXg1MjEiLCJhIjoiY2owaW1uYXBiMDBlZDJxbzM4d2M1a3N6diJ9.jr45mw3pKka1dCwFfC4aOQ';
+//L.mapbox.accessToken = 'pk.eyJ1IjoibG9yYXg1MjEiLCJhIjoiY2owaW1uYXBiMDBlZDJxbzM4d2M1a3N6diJ9.jr45mw3pKka1dCwFfC4aOQ';
 //L.mapbox.accessToken = 'pk.eyJ1IjoibG9yYXg1MjEiLCJhIjoiY2oyZTlneWxzMDdsbzJxbHZ1NHVkY284ciJ9.M99KYDewtwHYmtdJO-j4Eg';
 
 /*
@@ -10,9 +10,7 @@ var OpenStreetMap_BlackAndWhite = L.tileLayer('http://{s}.tiles.wmflabs.org/bw-m
 }).addTo(map);
 */
 
-    var map = L.mapbox.map('map', 'mapbox.light')
-      .setView([38.05, -84.5], 12);
-    map.scrollWheelZoom.disable();
+L.mapbox.accessToken = 'pk.eyJ1IjoibG9yYXg1MjEiLCJhIjoiY2owaW1uYXBiMDBlZDJxbzM4d2M1a3N6diJ9.jr45mw3pKka1dCwFfC4aOQ';
 
     // Add marker color, symbol, and size to hospital GeoJSON
     for (var i = 0; i < hospitals.features.length; i++) {
@@ -27,6 +25,10 @@ var OpenStreetMap_BlackAndWhite = L.tileLayer('http://{s}.tiles.wmflabs.org/bw-m
       libraries.features[j].properties['marker-symbol'] = 'library';
       libraries.features[j].properties['marker-size'] = 'small';
     }
+
+    var map = L.mapbox.map('map', 'mapbox.light')
+      .setView([38.05, -84.5], 12);
+    map.scrollWheelZoom.disable();
 
     var hospitalLayer = L.mapbox.featureLayer(hospitals)
       .addTo(map);
