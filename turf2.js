@@ -30,9 +30,9 @@ lineOptions: {
 //alt key//L.mapbox.accessToken = 'pk.eyJ1IjoibG9yYXg1MjEiLCJhIjoiY2owaW1uYXBiMDBlZDJxbzM4d2M1a3N6diJ9.jr45mw3pKka1dCwFfC4aOQ';
 L.mapbox.accessToken = 'pk.eyJ1IjoibG9yYXg1MjEiLCJhIjoiY2oyZTlneWxzMDdsbzJxbHZ1NHVkY284ciJ9.M99KYDewtwHYmtdJO-j4Eg';
 var hospitals = {
-  type: 'FeatureCollection',
-  features: [
-    { type: 'Feature', properties: { Name: 'VA Medical Center -- Leestown Division', Address: '2250 Leestown Rd' }, geometry: { type: 'Point', coordinates: [-84.539487, 38.072916] } },
+  'type': 'FeatureCollection',
+  'features': [
+    { 'type': 'Feature', 'properties': { 'Name': 'VA Medical Center -- Leestown Division', 'Address': '2250 Leestown Rd' }, 'geometry': { 'type': 'Point', 'coordinates': [-84.539487, 38.072916] } },
     { type: 'Feature', properties: { Name: 'St. Joseph East', Address: '150 N Eagle Creek Dr' }, geometry: { type: 'Point', coordinates: [-84.440434, 37.998757] } },
     { type: 'Feature', properties: { Name: 'Central Baptist Hospital', Address: '1740 Nicholasville Rd' }, geometry: { type: 'Point', coordinates: [-84.512283, 38.018918] } },
     { type: 'Feature', properties: { Name: 'VA Medical Center -- Cooper Dr Division', Address: '1101 Veterans Dr' }, geometry: { type: 'Point', coordinates: [-84.506483, 38.02972] } },
@@ -54,6 +54,12 @@ var libraries = {
     { type: 'Feature', properties: { Name: 'Tates Creek Branch', Address: '3628 Walden Dr' }, geometry: { type: 'Point', coordinates: [-84.498679, 37.979598] } },
     { type: 'Feature', properties: { Name: 'Eagle Creek Branch', Address: '101 N Eagle Creek Dr' }, geometry: { type: 'Point', coordinates: [-84.442219, 37.999437] } }
   ]
+};
+var hospitals2 = {
+  'type': 'FeatureCollection',
+  'features': [
+    { 'type': 'Feature', 'properties': { 'Name': 'VA Medical Center -- Leestown Division', 'Address': '2250 Leestown Rd' }, 'geometry': { 'type': 'Point', 'coordinates': [-84.539487, 38.072916] } },
+ 	]
 };
     // Add marker color, symbol, and size to hospital GeoJSON
     for (var i = 0; i < hospitals.features.length; i++) {
@@ -85,6 +91,9 @@ var libraries = {
 	};
 
 	L.geoJSON(hospitals, {
+		style: bringToFront
+	}).addTo(map);
+	L.geoJSON(hospitals2, {
 		style: bringToFront
 	}).addTo(map);
 	L.geoJSON(libraries, {
