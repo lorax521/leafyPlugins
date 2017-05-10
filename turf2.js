@@ -5,9 +5,6 @@ var OpenStreetMap_BlackAndWhite = L.tileLayer('http://{s}.tiles.wmflabs.org/bw-m
 	attribution: '&copy; <a href="http://www.openstreetmap.org/copyright">OpenStreetMap</a>'
 }).addTo(map);
 
-var marker = L.marker([38.05, -84.53], 
-		      {draggable: 'true'}).addTo(map);
-
 //turf
 //alt key//L.mapbox.accessToken = 'pk.eyJ1IjoibG9yYXg1MjEiLCJhIjoiY2owaW1uYXBiMDBlZDJxbzM4d2M1a3N6diJ9.jr45mw3pKka1dCwFfC4aOQ';
 L.mapbox.accessToken = 'pk.eyJ1IjoibG9yYXg1MjEiLCJhIjoiY2oyZTlneWxzMDdsbzJxbHZ1NHVkY284ciJ9.M99KYDewtwHYmtdJO-j4Eg';
@@ -65,11 +62,13 @@ var hospitals2 = {
     var libraryLayer = L.mapbox.featureLayer(libraries)
       .addTo(map);
 
+/*
 var geojsonLayer = new L.GeoJSON.AJAX("turfHospitals.js");       
 geojsonLayer.addTo(map);
 
 var geojsonLayer = new L.GeoJSON.AJAX("turfLibraries.js");       
 geojsonLayer.addTo(map);
+*/
 
 /*
 	var bringToFront = {
@@ -92,6 +91,8 @@ geojsonLayer.addTo(map);
 		style: bringToFront
 	}).addTo(map);
 */
+var marker = L.marker([38.05, -84.53], 
+		      {draggable: 'true'}).addTo(map);
 
     map.fitBounds(libraryLayer.getBounds());
 
