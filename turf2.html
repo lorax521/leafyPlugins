@@ -1,44 +1,48 @@
-<!DOCTYPE html>
 <html>
 <head>
-	<title>Leafy</title>
+<meta charset=utf-8 />
+<title>Leafy Turf Map</title>
+<meta name='viewport' content='initial-scale=1,maximum-scale=1,user-scalable=no' />
+<!--Mapbox-->
+<script src='https://api.mapbox.com/mapbox.js/v2.1.5/mapbox.js'></script>
+<link href='https://api.mapbox.com/mapbox.js/v2.1.5/mapbox.css' rel='stylesheet' />
+<script src='https://api.mapbox.com/mapbox.js/plugins/turf/v1.3.0/turf.min.js'></script>
+<!--Leaflet
+<link rel="stylesheet" href="https://unpkg.com/leaflet@1.0.3/dist/leaflet.css" />
+<script src="https://unpkg.com/leaflet@1.0.3/dist/leaflet.js"></script>
+-->
+<!--Mapzen
+<link rel="stylesheet" href="https://mapzen.com/js/mapzen.css">
+<link rel="stylesheet" href="https://unpkg.com/lrm-mapzen@1.1.7/dist/lrm-mapzen.css">
+-->
+<!--JavaScript-->
+<script src='turfHospitals.js'></script>
+<script src='turfLibraries.js'></script>
+<script src = 'turf2.js'></script>
 	
-	<!--Leaflet-->
-	<link rel="stylesheet" href="https://unpkg.com/leaflet@1.0.3/dist/leaflet.css" />
-	<script src="https://unpkg.com/leaflet@1.0.3/dist/leaflet.js"></script>
-	<!--Mapbox-->
-	<link href='https://api.mapbox.com/mapbox.js/v3.0.1/mapbox.css' rel='stylesheet' />
-	<script src='https://api.mapbox.com/mapbox.js/v3.0.1/mapbox.js'></script>
-	<script src='https://api.mapbox.com/mapbox.js/plugins/turf/v2.0.2/turf.min.js'></script>
-	<!--Mapzen
- 	<link rel="stylesheet" href="https://mapzen.com/js/mapzen.css">
-  	<link rel="stylesheet" href="https://unpkg.com/lrm-mapzen@1.1.7/dist/lrm-mapzen.css">
-	-->
-	<!--js-->
-	<script src='turfHospitals.js'></script>
-	<script src='turfLibraries.js'></script>
-	<script src="turf2.js"></script>
-  
-	<style type="text/css">
-		html,body,#map { 
-			height:100%; 
-			width:100%;
-		}
-	</style>
+<style>
+  body {
+    margin: 0;
+    padding: 0;
+  }
+  #map {
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    width: 100%;
+  }
+</style>
 </head>
-	
 <body>
-	<div id="map"></div>
-	<!--mapzen
-	<script src="https://mapzen.com/js/mapzen.js"></script>
-	<script src="https://cdnjs.cloudflare.com/ajax/libs/leaflet-routing-machine/3.2.5/leaflet-routing-machine.min.js"></script>
-	<script src="https://unpkg.com/lrm-mapzen@1.1.7/dist/lrm-mapzen.js"></script>
-	<script> 
-	L.Mapzen.apiKey = "mapzen-zjC7pba";
-	</script>
-	-->
-	<script src='turfHospitals.js'></script>
-	<script src='turfLibraries.js'></script>
-	<script src="turf2.js"></script>
+  <div id='map'></div>
+<!--mapzen
+<script src="https://mapzen.com/js/mapzen.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/leaflet-routing-machine/3.2.5/leaflet-routing-machine.min.js"></script>
+<script src="https://unpkg.com/lrm-mapzen@1.1.7/dist/lrm-mapzen.js"></script>
+-->
+ <script src='turfHospitals.js'></script>
+ <script src='turfLibraries.js'></script>
+ <script src='turf2.js'></script>
+	
 </body>
 </html>
