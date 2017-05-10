@@ -14,7 +14,7 @@ var marker = L.marker([38.05, -84.44],
 L.Routing.control({
   waypoints: [
     L.latLng(38.052, -84.54),
-    L.latLng(38.053, -84.57),
+    L.latLng(38.053, -84.51),
   ],
 lineOptions: {
   styles: [ {color: "white",opacity: 0.8, weight: 12},
