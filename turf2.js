@@ -96,7 +96,7 @@ var marker = L.marker([38.05, -84.53],
 
     map.fitBounds(libraryLayer.getBounds());
 
-
+/*
 //mapzen
 L.Mapzen.apiKey = "mapzen-zjC7pba";
 
@@ -114,3 +114,4 @@ lineOptions: {
   summaryTemplate:'<div class="start">{name}</div><div class="info {costing}">{distance}, {time}</div>',
   routeWhileDragging: true
 }).addTo(map);
+*/
