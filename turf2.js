@@ -29,6 +29,8 @@ lineOptions: {
 //turf
 //alt key//L.mapbox.accessToken = 'pk.eyJ1IjoibG9yYXg1MjEiLCJhIjoiY2owaW1uYXBiMDBlZDJxbzM4d2M1a3N6diJ9.jr45mw3pKka1dCwFfC4aOQ';
 L.mapbox.accessToken = 'pk.eyJ1IjoibG9yYXg1MjEiLCJhIjoiY2oyZTlneWxzMDdsbzJxbHZ1NHVkY284ciJ9.M99KYDewtwHYmtdJO-j4Eg';
+
+/*
 var hospitals = {
   type: 'FeatureCollection',
   features: [
@@ -61,6 +63,7 @@ var hospitals2 = {
     { 'type': 'Feature', 'properties': { 'Name': 'VA Medical Center -- Leestown Division', 'Address': '2250 Leestown Rd' }, 'geometry': { 'type': 'Point', 'coordinates': [-84.539487, 38.072916] } },
  	]
 };
+*/
     // Add marker color, symbol, and size to hospital GeoJSON
     for (var i = 0; i < hospitals.features.length; i++) {
       hospitals.features[i].properties['marker-color'] = '#DC143C';
@@ -80,6 +83,13 @@ var hospitals2 = {
     var libraryLayer = L.mapbox.featureLayer(libraries)
       .addTo(map);
 
+var geojsonLayer = new L.GeoJSON.AJAX("turfHospitals.js");       
+geojsonLayer.addTo(map);
+
+var geojsonLayer = new L.GeoJSON.AJAX("turfLibraries.js");       
+geojsonLayer.addTo(map);
+
+/*
 	var bringToFront = {
 	"z-index" : 1000,
 	radius: 8,
@@ -99,5 +109,6 @@ var hospitals2 = {
 	L.geoJSON(libraries, {
 		style: bringToFront
 	}).addTo(map);
+*/
 
     map.fitBounds(libraryLayer.getBounds());
