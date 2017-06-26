@@ -16,7 +16,7 @@
 
     var map = L.mapbox.map('map', 'mapbox.light')
       .setView([38.05, -84.5], 12);
-    map.scrollWheelZoom.disable();
+    map.scrollWheelZoom.enable();
 
     var hospitalLayer = L.mapbox.featureLayer(hospitals)
       .addTo(map);
