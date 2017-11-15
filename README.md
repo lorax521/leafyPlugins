@@ -1,5 +1,5 @@
 # leafyPlugins
-testing leaflet plugins
+testing leaflet plugins and friends
 
 Mapzen routing:
 https://lorax521.github.io/leafyPlugins/mapzen
