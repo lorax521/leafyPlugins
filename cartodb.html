@@ -10,17 +10,10 @@
   <body>
     <div id="wrapper">
       <div id="header">
-        <h1>Caffeinated Cambridge</h1>
+        <h1>Click to find the 5 closest coffee shops</h1>
       </div>
+      <button class="button" onclick="showAll()" value="Reset Map"><span>Reset Map</span></button>
       <div id="map"></div>
-      <div id="controls">
-        <div id="form">
-          <p>Click on the map to find the five closest coffee shops to that location</p>
-            <form action="">
-                <input type="button" onclick="showAll()" value="Reset Map">
-            </form>
-        </div>
-        <div id="credits"><p>Coffee Shop Data from <a href="http://www.referenceusa.com/">ReferenceUSA</a><br>#webMapWorkshop - &copy;2015, Mike Foster</p></div>
       </div>
     </div>
 
@@ -33,7 +26,7 @@
 
     // Add Tile Layer basemap
     L.tileLayer('http://tiles.mapc.org/basemap/{z}/{x}/{y}.png', {
-      attribution: 'Tiles by <a href="http://mapc.org">MAPC</a>, Data by <a href="http://mass.gov/mgis">MassGIS</a>',
+      attribution: 'Tiles by <a href="http://mapc.org">MAPC</a>, Data by <a href="http://mass.gov/mgis, Coffee Shop Data from <a href="http://www.referenceusa.com/">ReferenceUSA</a><br>#webMapWorkshop - &copy;2015, Mike Foster">MassGIS</a>',
       maxZoom: 17,
       minZoom: 9
     }).addTo(map);
