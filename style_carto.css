@@ -15,44 +15,66 @@ body {
   
   h1 {
     line-height: 60px;
-    margin-top: 0px;
-    margin-bottom: 0px;
-    font-weight: lighter;
-  }
-  
-  #wrapper {
-    width: 750px;
+    margin: 10px 0px 0px 80px;
+    position: absolute;
+    font-family: Helvetica;
+    color: white;
+    text-shadow: 1px 1px 8px #ff0000;
+    z-index: 1000;
   }
   
   #map {
     width: 100vw;
-    margin: 0 auto;
-    height: 750px;
+    height: 100vh;
   }
-  
-  #controls {
-    width: 100%;
-    margin: 0 auto;
-    float: left;
-  }
-  
-  #form {
-    margin-top: 5px;
-    font-size: 12px;
-    text-align: left;
-    line-height: 16px;
-    width:375px;
-    float: left;
-  }
-  
+
   #header {
     margin-top: 0px;
     margin-bottom: 0px;
   }
+
+  .button {  
+    position: absolute;
+    background-color: #4CAF50; /* Green */
+    border: none;
+    color: white;
+    padding: 15px 32px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 16px;
+    z-index: 1000;
+    top: 20px;
+    right: 40px;
+    opacity: 0.7;
+    transition: 0.5s;
+  }
+
+  .button span {
+    cursor: pointer;
+    display: inline-block;
+    position: relative;
+    transition: 0.5s;
+  }
   
-  #credits p {
-    margin-top: 5px;
-    font-size: 12px;
-    text-align: right;
-    line-height: 16px;
+  .button span:after {
+    content: '\00bb';
+    position: absolute;
+    opacity: 0;
+    top: 0;
+    right: -10px;
+    transition: 0.5s;
+  }
+  
+  .button:hover {
+    opacity: 1;
+  }
+
+  .button:hover span {
+    padding-right: 15px;
+  }
+  
+  .button:hover span:after {
+    opacity: 1;
+    right: 0;
   }
