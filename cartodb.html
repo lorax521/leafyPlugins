@@ -5,14 +5,15 @@
     <meta name="viewport" content="initial-scale=1.0, user-scalable=no" />
     <meta http-equiv="content-type" content="text/html; charset=UTF-8"/>
     <link rel="stylesheet" href="https://unpkg.com/leaflet@1.0.3/dist/leaflet.css" />
-    <link rel="stylesheet" type="text/css" href="style_carto.css">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+    <link rel="stylesheet" type="text/css" href="css/style2.css">
   </head>
   <body>
     <div id="wrapper">
       <div id="header">
         <h1>Click to find the 5 closest coffee shops</h1>
       </div>
-      <button class="button" onclick="showAll()" value="Reset Map"><span>Reset Map</span></button>
+      <button class="button" onclick="showAll()" value="Reset Map">Reset Map<div id="hidden"><i class="fa fa-refresh fa-spin" aria-hidden="true"></i></div></button>
       <div id="map"></div>
       </div>
     </div>
