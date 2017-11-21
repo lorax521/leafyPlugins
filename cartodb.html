@@ -6,7 +6,7 @@
     <meta http-equiv="content-type" content="text/html; charset=UTF-8"/>
     <link rel="stylesheet" href="https://unpkg.com/leaflet@1.0.3/dist/leaflet.css" />
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
-    <link rel="stylesheet" type="text/css" href="css/style2.css">
+    <link rel="stylesheet" type="text/css" href="style_carto.css">
   </head>
   <body>
     <div id="wrapper">
@@ -67,8 +67,6 @@
       showAll();
     });
 
-    // Script to find Five Closest Coffee Shops will go Here
-    // Find five closest coffee shops
     // Set Global Variable that will hold your location
     var myLocation = null;
 
@@ -92,20 +90,11 @@
       locationMarker = L.marker(e.latlng, {icon: redIcon});
       map.addLayer(locationMarker);
     };
-    //elif not found
 
     //find and make markers for the nearest 5 coffee shops
     function closestCoffee() {
       //sql query
       var sqlQueryClosest = `select * from coffee_cafes order by the_geom <-> ST_SetSRID(ST_MakePoint(${myLocation.lng}, ${myLocation.lat}), 4326) limit 5`;
-
-      //remove anything on the map
-      /*
-      if (map.hasLayer(coffeeShopLocations)||map.hasLayer(locationMarker)) {
-        map.removeLayer(coffeeShopLocations);
-        map.removeLayer(locationMarker);
-      };
-      */
 
       if (map.hasLayer(coffeeShopLocations)) {
         map.removeLayer(coffeeShopLocations);
